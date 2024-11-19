@@ -1,0 +1,28 @@
+<main class="roboto-regular">
+  @for(recipe of recipeList; track $index){
+  <div class="recipe-card">
+    <div class="recipe-card__image__container">
+      <img class="recipe-card__image" [src]="recipe.image" />
+    </div>
+    <div class="recipe-card__details">
+      <p class="recipe-card__details__information roboto-bold">
+        Ingredients:
+        <span class="roboto-regular">{{ recipe.ingredients }}</span>
+      </p>
+
+      <div>
+        <p class="recipe-card__details__information roboto-bold">Procedure:</p>
+        <ol class="procedure-list">
+          @for (procedure of recipe.procedure; track $index) {
+          <li>{{ procedure }}</li>
+          }
+        </ol>
+      </div>
+
+      <div class="button-container">
+        <button class="button-watch roboto-medium">Watch</button>
+      </div>
+    </div>
+  </div>
+  }
+</main>
